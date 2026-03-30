@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS</title>
+    <style>
+        :root {
+            --primary-bg: #f0f2f5;
+            --card-bg: #ffffff;
+            --accent-color: #4a90e2;
+            --text-color: #333;
+            --btn-hover: #357abd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 1.0rem;
+            margin-bottom: 25px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-btn {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 15px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid transparent;
+        }
+
+        .link-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .link-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="profile-img">H</div>
+    <h1>Welcome to the NEXUS!</h1>
+    <h2>a hub to redirect</h2>
+
+    <div class="links">
+        <a href="/editor/index.html" class="link-btn" target="_blank">Quest Editor</a>
+        <a href="/viewer/index.html" class="link-btn" target="_blank">Quest Viewer</a>
+    </div>
+</div>
+
+</body>
+</html>

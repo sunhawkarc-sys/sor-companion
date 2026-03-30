@@ -1,0 +1,342 @@
+:root {
+    --bg-main: #f4f4f9;
+    --bg-side: #ffffff;
+    --bg-terminal: #1e1e1e;
+    --border-color: #ddd;
+    --accent: #007bff;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+.app-container {
+  display: grid;
+  /* Sidebar (flexibel), Mitte (Rest), Rechts (fest 300px) */
+  grid-template-columns: min-content 1fr 300px; 
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* Verhindert Scrollbars auf Body-Ebene */
+}
+
+
+/* SIDEBAR LINKS */
+.sidebar {
+  background-color: var(--bg-side);
+  border-right: 2px solid var(--border-color);
+  width: 250px; /* Feste Breite im ausgeklappten Zustand */
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 60px; /* Breite im eingeklappten Zustand */
+}
+
+
+#toggle-btn {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    background: var(--accent);
+    color: white;
+    border: none;
+}
+
+/* HAUPTBEREICH MITTE */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-main);
+  min-width: 0; /* Verhindert, dass Flex-Items das Grid sprengen */
+  overflow: hidden;
+}
+
+.viewer {
+  flex: 1;
+  padding: 20px;
+  border-bottom: 2px solid var(--border-color);
+  /* width: 60vw;  <-- DIESE ZEILE UNBEDINGT LÖSCHEN */
+  overflow: auto; /* Erlaubt Scrollen nur innerhalb des Viewers */
+}
+
+
+/*.viewer {
+    flex: 1;
+    padding: 20px;
+    border-bottom: 2px solid var(--border-color);
+}*/
+
+.terminal {
+    height: 150px;
+    background-color: var(--bg-terminal);
+    color: #00ff00;
+    padding: 10px;
+    font-family: monospace;
+}
+
+/* EDITIERBEREICH RECHTS */
+.editor-panel {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-side);
+    border-left: 2px solid var(--border-color);
+}
+
+.editor-top, .editor-bottom {
+    flex: 1; /* Identische Größe */
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.editor-bottom {
+    border-bottom: none;
+    background-color: #fafafa; /* Minimaler Farbunterschied */
+}
+
+/*.viewer {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}*/
+
+.viewer-header {
+  padding-bottom: 10px;
+}
+
+/*#flow-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}*/
+#flow-container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  
+  display: flex;
+  gap: 40px;
+  
+  position: relative;
+}
+
+/* Spalten */
+.flow-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* HEXAGON */
+.hex {
+  width: 60px;
+  height: 70px;
+  background: #007bff;
+  clip-path: polygon(
+  50% 0%,
+  100% 25%,
+  100% 75%,
+  50% 100%,
+  0% 75%,
+  0% 25%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
+.unused-container {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.unused-entry {
+  padding: 8px 12px;
+  background: #ccc;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.content-list {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.content-item {
+  border: 1px solid #ddd;
+  padding: 8px;
+  margin-bottom: 8px;
+  background: #fff;
+}
+
+.content-item input,
+.content-item select {
+  display: block;
+  margin: 5px 0;
+  width: 100%;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+
+
+
+
+.inline-icon {
+  height: 1em;
+  vertical-align: middle;
+}
+
+.qr-image {
+  max-width: 200px;
+  margin: 10px;
+}
+
+.qr-container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.quest-block {
+  width: 63mm;
+  margin: 10px auto;
+  position: relative;
+}
+
+.quest-line {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, currentColor, transparent);
+  margin: 0;
+}
+
+.quest-content {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+  
+  background: linear-gradient(
+  to right,
+  transparent,
+  rgba(255,255,0,0.4),
+  transparent
+  );
+}
+
+.quest-content.green {
+  background: linear-gradient(to right, transparent, rgba(0,255,0,0.4), transparent);
+}
+
+.quest-content.red {
+  background: linear-gradient(to right, transparent, rgba(255,0,0,0.4), transparent);
+}
+
+.quest-content.blue {
+  background: linear-gradient(to right, transparent, rgba(0,0,255,0.4), transparent);
+}
+
+.quest-icon {
+  width: 20%;
+  float: left;
+  margin-right: 10px;
+}
+
+.quest-text {
+  overflow: hidden;
+}
+
+.resource-icon {
+  width: 16px;
+  vertical-align: middle;
+}
+
+.inline-icon {
+  width: 18px;
+  vertical-align: middle;
+}
+
+.action-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.pass-btn {
+  background: #2ecc71;
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  cursor: pointer;
+}
+
+.fail-btn {
+  background: #e74c3c;
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+.flow-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.flow-svg {
+  pointer-events: none; /* wichtig! */
+}
+
+.hex, .flow-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.flow-icon-wrapper {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.flow-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.node-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,1), 0 0 5px rgba(0,0,0,1), 0 0 2px rgba(0,0,0,1);
+  font-weight: bold;
+  pointer-events: none;
+  
+  z-index: 20;
+}
+
+.flow-column {
+  min-width: 120px;
+}

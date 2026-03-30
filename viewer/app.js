@@ -2,7 +2,7 @@
 //  app.js
 //  HFWSoR Companion
 //
-//  Created by Falk Schubert on 29.03.26.
+//  Created on 29.03.26.
 //
 
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar Links -->
+        <aside class="sidebar" id="sidebar">
+            <button id="toggle-btn">☰</button>
+            <nav class="nav-content">
+              <ul id="quest-list"></ul>
+              <button id="new-quest-btn">+ Neue Quest</button>
+            </nav>
+        </aside>
+
+        <!-- Hauptbereich Mitte -->
+        <main class="main-content">
+            <section class="viewer">
+              <div class="viewer-header">
+                <button id="add-entry-btn">+ Entry</button>
+                <button id="scroll-start-btn">⟸ Start</button>
+                <button id="scroll-end-btn">Ende ⟹</button>
+              </div>
+              <div id="flow-container"></div>
+            </section>
+            <footer class="terminal">
+              <input id="quest-name-input" placeholder="Quest Name..." />
+              <button id="export-btn">Export</button>
+              <div id="stats"></div>
+            </footer>
+        </main>
+
+        <!-- Bearbeitungsansicht Rechts -->
+        <aside class="editor-panel">
+            <div class="editor-top">Bearbeitung Oben</div>
+            <div class="editor-bottom">Bearbeitung Unten</div>
+        </aside>
+    </div>
+
+    <script src="render.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
