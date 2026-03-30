@@ -1,0 +1,88 @@
+body {
+  font-family: Arial;
+  text-align: center;
+}
+
+#questList button {
+  margin: 5px;
+}
+
+/* === DEIN CSS === */
+
+.inline-icon {
+  height: 1em;
+  vertical-align: middle;
+}
+
+.quest-block {
+  width: 63mm;
+  margin: 10px auto;
+  position: relative;
+}
+
+.quest-line {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, currentColor, transparent);
+}
+
+.quest-content {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.quest-content.green {
+  background: linear-gradient(to right, transparent, rgba(0,255,0,0.4), transparent);
+}
+
+.quest-content.red {
+  background: linear-gradient(to right, transparent, rgba(255,0,0,0.4), transparent);
+}
+
+.quest-content.blue {
+  background: linear-gradient(to right, transparent, rgba(0,0,255,0.4), transparent);
+}
+
+.quest-icon {
+  width: 20%;
+  float: left;
+  margin-right: 10px;
+}
+
+.quest-text {
+  overflow: hidden;
+}
+
+.resource-icon {
+  width: 16px;
+  vertical-align: middle;
+}
+
+.inline-icon {
+  width: 18px;
+  vertical-align: middle;
+}
+
+.action-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.pass-btn {
+  background: #2ecc71;
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  cursor: pointer;
+}
+
+.fail-btn {
+  background: #e74c3c;
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  cursor: pointer;
+}
