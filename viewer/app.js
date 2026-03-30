@@ -474,7 +474,7 @@ function renderAdditionalRules(entry) {
     <div class="quest-line blue"></div>
   
     <div class="quest-content blue">
-      <img src="./resources/icons/rules.png" class="quest-icon">
+      <img src="../resources/icons/rules.png" class="quest-icon">
   
       <div class="quest-text">
         ${contentHTML}
@@ -508,7 +508,7 @@ function renderStyledBlock(entry, color, iconName) {
     
     <div class="quest-content ${color}">
       
-      <img src="./resources/icons/${iconName}" class="quest-icon">
+      <img src="../resources/icons/${iconName}" class="quest-icon">
       
       <div class="quest-text">
         ${renderBlockContent(entry)}
@@ -536,7 +536,7 @@ function renderBlockContent(entry) {
     
     const resHTML = item.resources?.map(res => {
       return `
-        <img src="./resources/icons/${res.resourceID}.png" class="resource-icon">
+        <img src="../resources/icons/${res.resourceID}.png" class="resource-icon">
         ${res.amount}
       `;
     }).join(" ") || "";
@@ -560,11 +560,11 @@ function renderActionRoll(entry) {
   
     // 🔥 SYMBOLS
   const pips = Array(c.pips)
-  .fill(`<img src="./resources/icons/pip.png" class="inline-icon">`)
+  .fill(`<img src="../resources/icons/pip.png" class="inline-icon">`)
   .join(" ");
   
   const critical = Array(c.critical)
-  .fill(`<img src="./resources/icons/critical.png" class="inline-icon">`)
+  .fill(`<img src="../resources/icons/critical.png" class="inline-icon">`)
   .join(" ");
   
   wrapper.innerHTML = `
@@ -572,7 +572,7 @@ function renderActionRoll(entry) {
     
     <div class="quest-content red">
       
-      <img src="./resources/icons/action.png" class="quest-icon">
+      <img src="../resources/icons/action.png" class="quest-icon">
       
       <div class="quest-text">
         <p>Make a ${pips} / ${critical} action roll.</p>
@@ -604,7 +604,7 @@ function renderTextWithIcons(text) {
 
 function parseInlineIcons_quest(text) {
   return text.replace(/#(.*?)#/g, (match, src) => {
-    return `<img src="./resources/icons/${src}" class="inline-icon">`;
+    return `<img src="../resources/icons/${src}" class="inline-icon">`;
   });
 }
 
